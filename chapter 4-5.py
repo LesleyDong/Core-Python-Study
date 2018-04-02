@@ -126,3 +126,124 @@ TURE
 >>> a.conjugate()
 (1-3j)
 >>>
+
+#5.4.1-----------------------------------------------------------------------------------
+>>> #cmp() in python2 but operator in python3
+...
+>>> import operator
+>>> operator.gt(1,2)
+False
+>>> operator.gt(4,2)
+True
+>>> # greater than
+...
+>>> operator.ge(1,2)
+False
+>>> operator.ge(1,1)
+True
+>>> operator.gt(1,1)
+False
+>>> # greater than or equal
+...
+>>> operator.eq(1,1)
+True
+>>> operator.eq(5,8)
+False
+>>> #equal
+...
+>>> operator.lt(1,2)
+True
+>>> operator.le(1,2)
+True
+>>>#gt,ge,eq,lt,le
+
+
+#5.6.2-----------------------------------------------------------------------------------
+>>> int(4.55)
+4
+>>> complex(4)
+(4+0j)
+>>> int(4+1j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't convert complex to int
+>>> float(5.33)
+5.33
+>>> float(int(5.33))
+5.0
+>>> long(3.52)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'long' is not defined
+>>> long(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'long' is not defined
+>>> complex(4,7)
+(4+7j)
+>>> bool(3)
+True
+>>> bool(0)
+False
+>>> bool(1+3j)
+True
+>>>
+>>> abs(-1)
+1
+>>> abs(3+4j)
+5.0
+>>> coerce(3,3+j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'coerce' is not defined
+>>> coerce(2,4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'coerce' is not defined
+>>> divmod(1,6)
+(0, 1)
+>>> divmod(7,2)
+(3, 1)
+>>> pow(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: pow expected at least 2 arguments, got 1
+>>> pow(3,2)
+9
+>>> round(3)
+3
+>>> round(4.66442)
+5
+>>> round(3.42199)
+3
+>>>
+
+
+#5.6.3-----------------------------------------------------------------------------------
+>>> hex(45)
+'0x2d'
+>>> oct(45)
+'0o55'
+>>> hex(2+3j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'complex' object cannot be interpreted as an integer
+>>>
+>>> ord(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: ord() expected string of length 1, but complex found
+>>> ord(3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: ord() expected string of length 1, but int found
+>>> ord('3')
+51
+>>> ord('a')
+97
+>>> chr(73)
+'I'
+>>>
+
+
+# 5.7.2 Important!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
