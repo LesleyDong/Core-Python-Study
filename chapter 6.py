@@ -132,3 +132,24 @@ If the starting or ending index is not specified, the first and last index of th
 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 >>> string.digits
 '0123456789'
+
+#6.3.2 -----------------------------------------------------------------------------------------
+# check if the title is valid
+>>> def checkstr(str):
+...     alphas = string.ascii_letters + "_"
+...     num = string.digits
+...     if str[0] not in alphas:
+...             return 0
+...     else:
+...             for ch in str:
+...                     if ch not in alphas + num:
+...                             return 0
+...             return 1
+...
+>>> checkstr("_sde")
+1
+>>> checkstr("12de")
+0
+>>> checkstr("sd--")
+0
+>>>
