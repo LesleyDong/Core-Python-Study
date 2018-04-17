@@ -105,3 +105,30 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'sort' is not defined
 >>>
+
+
+#6.3.2 -----------------------------------------------------------------------------------------
+If the starting or ending index is not specified, the first and last index of the string are the default values, respectively.
+>>> str = "abcd"
+>>> str[0]
+'a'
+>>> # 0 is the first index
+...
+>>> str[3]
+'d'
+>>> len(str)-1
+3
+>>> # len(string)-1 is the last index
+...
+
+
+#6.3.2 -----------------------------------------------------------------------------------------
+>>> import string
+>>> string.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> string.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+>>> string.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+>>> string.digits
+'0123456789'
