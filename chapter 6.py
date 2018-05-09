@@ -133,6 +133,8 @@ If the starting or ending index is not specified, the first and last index of th
 >>> string.digits
 '0123456789'
 
+
+
 #6.3.2 -----------------------------------------------------------------------------------------
 # check if the title is valid
 >>> def checkstr(str):
@@ -152,4 +154,64 @@ If the starting or ending index is not specified, the first and last index of th
 0
 >>> checkstr("sd--")
 0
+>>>
+
+#6.11 -----------------------------------------------------------------------------------------
+>>> alist = [1,4,"aa",{34}]
+>>> alist
+[1, 4, 'aa', {34}]
+>>> aList
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'aList' is not defined
+>>>
+>>> alist[2]= ("cc",34)
+>>> alist
+[1, 4, ('cc', 34), {34}]
+>>>
+>>> alist.append("new")
+>>> alist
+[1, 4, ('cc', 34), {34}, 'new']
+>>> alist.remove(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> alist.remove(1)
+>>> alist
+[('cc', 34), {34}, 'new']
+>>> del alist
+>>> alist
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'alist' is not defined
+>>>
+
+#6.12-13 -----------------------------------------------------------------------------------------
+#same as string 
+#>; <; ==; []; [:]; in; not in; +; *
+#cmp() len() max() sorted() reversed() enumerate() zip() sum()
+#https://blog.csdn.net/sxingming/article/details/51353379
+>>>a = [1,2,3]
+>>> b = [4,5,6]
+>>> c = [4,5,6,7,8]
+>>> zipped = zip(a,b)
+[(1, 4), (2, 5), (3, 6)]
+
+#6.14 -----------------------------------------------------------------------------------------
+>>> alist.index("new")
+3
+>>> alist.insert(2,"insert")
+>>> alist
+[1, ('cc', 34), 'insert', {34}, 'new']
+>>> alist.pop(2)
+'insert'
+>>> alist
+[1, ('cc', 34), {34}, 'new']
+>>> alist.reverse()
+>>> alist
+['new', {34}, ('cc', 34), 1]
+>>> blist = [[23,78],1+2j]
+>>> alist.extend(blist)
+>>> alist
+['new', {34}, ('cc', 34), 1, [23, 78], (1+2j)]
 >>>
