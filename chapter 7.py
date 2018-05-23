@@ -26,6 +26,13 @@ SyntaxError: invalid syntax
 >>> 
 >>> dictf
 {'a': 1, 34: 11, 3: 'b'}
+>>> dictg = dict(([1,2,3],[4,5]))
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    dictg = dict(([1,2,3],[4,5]))
+ValueError: dictionary update sequence element #0 has length 3; 2 is required
+>>> 
+
 >>> dictf('a')
 Traceback (most recent call last):
   File "<pyshell#18>", line 1, in <module>
