@@ -131,3 +131,26 @@ b
 
 
 # 7.2 -----------------------------------------------------------------------------------------
+>>> dict1= {1:2}
+>>> dict2= {1:3}
+>>> dict3= {1:2,-1:-2}
+>>> dict4= {2:2}
+>>> dict1 < dict2
+Traceback (most recent call last):
+  File "<pyshell#104>", line 1, in <module>
+    dict1 < dict2
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+>>> import operator
+>>> operator.gt(dict2,dict1)
+Traceback (most recent call last):
+  File "<pyshell#108>", line 1, in <module>
+    operator.gt(dict2,dict1)
+TypeError: '>' not supported between instances of 'dict' and 'dict'
+>>> dict5 = {"a":1}
+>>> dict6 = {"b":2}
+>>> dict5 < dict6
+Traceback (most recent call last):
+  File "<pyshell#111>", line 1, in <module>
+    dict5 < dict6
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+# Can Not be compared in python3
