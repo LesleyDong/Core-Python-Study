@@ -68,9 +68,66 @@ Traceback (most recent call last):
   File "<pyshell#33>", line 1, in <module>
     dictc[2]
 TypeError: 'set' object does not support indexing
->>> dictc[1]
+
+>>> type(dictc)
+<class 'set'>
+>>> type(dictf)
+<class 'dict'>
+>>> type(dicta)
+<class 'dict'>
+＃The empty is dcit, like {xx,xx,xx,xx} is set, like{xx:xx, xx:xx, xx:xx} is dict
+
+>>> dictf
+{'a': 1, 34: 11, 3: 'b'}
+>>> dictf[a]
 Traceback (most recent call last):
-  File "<pyshell#34>", line 1, in <module>
-    dictc[1]
-TypeError: 'set' object does not support indexing
+  File "<pyshell#76>", line 1, in <module>
+    dictf[a]
+NameError: name 'a' is not defined
+>>> dictf['a']
+1
+>>> 'a' in dictf
+True
+>>> 1 in dictf
+False
+>>> dictf.keys()
+dict_keys(['a', 34, 3])
+>>> dictf.values()
+dict_values([1, 11, 'b'])
+>>> for key in dictf:
+	print(key)
+	print(':')
+	print(dictf[key])
+
+	
+a
+:
+1
+34
+:
+11
+3
+:
+b
 >>> 
+
+
+>>> dictf
+{'a': 1, 34: 11, 3: 'b'}
+>>> dicth = dict((["a",1],["a",2],["b",3]))
+>>> dicth
+{'a': 2, 'b': 3}
+>>> dicth['a']
+2
+>>> dictj = {1:2,3:4,5:6,1:7}
+>>> dictj
+{1: 7, 3: 4, 5: 6}
+>>> dictj[10] = 11
+>>> dictj
+{1: 7, 3: 4, 5: 6, 10: 11}
+>>> 
+
+
+
+
+# 7.2 -----------------------------------------------------------------------------------------
