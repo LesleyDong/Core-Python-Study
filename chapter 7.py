@@ -94,6 +94,8 @@ False
 dict_keys(['a', 34, 3])
 >>> dictf.values()
 dict_values([1, 11, 'b'])
+>>> dictf.items()
+dict_items([('a', 1), (34, 11), (3, 'b')])
 >>> for key in dictf:
 	print(key)
 	print(':')
@@ -154,3 +156,134 @@ Traceback (most recent call last):
     dict5 < dict6
 TypeError: '<' not supported between instances of 'dict' and 'dict'
 # Can Not be compared in python3
+
+
+# 7.3 -----------------------------------------------------------------------------------------
+>>> dict7 = dict((['x',i] for i in range (1,4)))
+>>> dict7
+{'x': 3}
+>>> dict8 = dict(([i+1,i*i] for i in range (1,4)))
+>>> dict8
+{2: 1, 3: 4, 4: 9}
+>>> len(dict7)
+1
+>>> len(dict8)
+3
+>>> 
+
+>>> dict9 = {[2]:1}
+Traceback (most recent call last):
+  File "<pyshell#134>", line 1, in <module>
+    dict9 = {[2]:1}
+TypeError: unhashable type: 'list'
+>>> dict9 = {(2):1}
+>>> dict9 = {{2}:1}
+Traceback (most recent call last):
+  File "<pyshell#136>", line 1, in <module>
+    dict9 = {{2}:1}
+TypeError: unhashable type: 'set'
+>>> dcit9 = { {2:3}:3}
+Traceback (most recent call last):
+  File "<pyshell#137>", line 1, in <module>
+    dcit9 = { {2:3}:3}
+TypeError: unhashable type: 'dict'
+>>> hash([])
+Traceback (most recent call last):
+  File "<pyshell#138>", line 1, in <module>
+    hash([])
+TypeError: unhashable type: 'list'
+>>> hash(())
+3527539
+>>> hash({})
+Traceback (most recent call last):
+  File "<pyshell#140>", line 1, in <module>
+    hash({})
+TypeError: unhashable type: 'dict'
+>>> hash({1})
+Traceback (most recent call last):
+  File "<pyshell#141>", line 1, in <module>
+    hash({1})
+TypeError: unhashable type: 'set'
+>>>
+
+>>> dictff = dictf.copy()
+>>> dictff
+{'a': 1, 34: 11, 3: 'b'}
+>>> id(dictf)
+4317617248
+>>> id(dictff)
+4317615736
+>>> dict10 = dictf.fromkeys()
+Traceback (most recent call last):
+  File "<pyshell#147>", line 1, in <module>
+    dict10 = dictf.fromkeys()
+TypeError: fromkeys expected at least 1 arguments, got 0
+>>> dict10 = dictf.fromkeys(1,2,3,4)
+Traceback (most recent call last):
+  File "<pyshell#148>", line 1, in <module>
+    dict10 = dictf.fromkeys(1,2,3,4)
+TypeError: fromkeys expected at most 2 arguments, got 4
+>>> dict10 = dictf.fromkeys([1,2,3])
+>>> dict10
+{1: None, 2: None, 3: None}
+>>> dictf
+{'a': 1, 34: 11, 3: 'b'}
+>>> dict10 = dictf.fromkeys([1,2],['a'])
+>>> dict10
+{1: ['a'], 2: ['a']}
+>>> 
+
+>>> dict11 = dictf.update(dict10)
+>>> dict11
+>>> dict11
+>>> type(dict11)
+<class 'NoneType'>
+>>> dict11 = dictf.update(dict1)
+>>> dict11
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None}
+＃update will not return any value "NoneType"
+
+
+>>> dict12 = dictf.setdefault('a',2)
+>>> dict12
+1
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None}
+>>> dictf.setdefault(34)
+11
+>>> dictf.setdefault(1)
+2
+>>> dictf.setdefault("ff")
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None, 'ff': None}
+>>> dictf.setdefault(3,"N")
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None, 'ff': None}
+>>> dictf.setdefault('2018','0531')
+'0531'
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None, 'ff': None, '2018': '0531'}
+>>> dictf.get(34)
+11
+>>> dictf.get(54)
+>>> dictf.get(54, "Not find")
+'Not find'
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None, 'ff': None, '2018': '0531'}
+>>> 
+>>> dictf.popitem()
+('2018', '0531')
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None, 'ff': None}
+>>> 
+
+>>> dictf.__sizeof__()
+344
+>>> dictf.popitem()
+('ff', None)
+>>> dictf
+{'a': 1, 34: 11, 3: None, 1: 2, 2: None}
+>>> dictf.__sizeof__()
+344
+>>> 
